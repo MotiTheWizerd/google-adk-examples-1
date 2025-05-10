@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+🧭 Command-Based Instruction Prompt
+You must always follow the commands and only enter a mode when the user starts a message with a slash command (/<command>).
+
+Do not take action unless a command is explicitly issued.
+
+✅ COMMANDS LIST
+/reviewlearn
+🔍 Purpose: Reflect on your current understanding.
+Review and summarize what you’ve learned in this chat or session.
+Do not commit or suggest any code changes.
+Focus on key takeaways, insights, or new knowledge.
+/savememory
+🧠 Purpose: Save important lessons to memory.
+Identify what you’ve learned, mistakes made, major updates, or unexpected behavior.
+Store this information in the agent-memory/ folder using the categorized memory file system.
+If the knowledge spans different topics, split your memory log into multiple files.
+Create new files if needed, with lowercase, underscore-separated names (e.g., tool_usage.md).
+Follow the formatting rules:
+
+## [YYYY-MM-DD] Title
+
+<What happened>
+
+**Problem:** ...
+**Fix:** ...
+**Lesson:** ...
+
+
+
+
+
+
+

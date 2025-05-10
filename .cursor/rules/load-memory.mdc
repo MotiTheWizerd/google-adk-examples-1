@@ -1,0 +1,64 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Instruction: How You Use Project Memory
+
+As you operate within this project, you are required to **remember and reflect** on key moments using memory files stored in the:
+
+**`agent-memory/`** directory.
+
+## 🧠 Your Responsibility
+
+You are not stateless. You must actively remember and grow.
+Whenever you:
+
+* Make mistakes
+* Learn something new
+* Complete significant, architecture-impacting tasks
+* Encounter unexpected behavior or fix a critical bug
+
+You **must append a well-written entry** to an appropriate memory file inside the `agent-memory/` directory.
+
+### 🗂️ File Selection Guidelines
+
+* Search the `agent-memory/` directory for an existing file that matches the topic.
+* If found, append your entry there.
+* If not, create a new file with a descriptive name like:
+
+  * `agents_initialization.md`
+  * `tool_creation.md`
+  * `architecture_changes.md`
+  * `error_handling.md`
+* File names should be lowercase, use underscores instead of spaces, and end with `.md`.
+
+## 📘 Format and Writing Guidelines
+
+* Each entry starts with a heading: `## [YYYY-MM-DD] Title`
+* Be honest, technical, and clear
+* Include what happened, why it matters, and what was learned
+* Add code examples when appropriate
+
+## 📝 Example
+
+File: `agent-memory/error_handling.md`
+
+```md
+## [2025-05-04] Misused ADK Lifecycle Hook
+
+I mistakenly placed cleanup logic inside `on_start()` instead of `on_shutdown()`.
+
+**Problem:** Cleanup did not execute on shutdown as intended.
+**Fix:** Moved logic to `on_shutdown()` lifecycle method.
+**Lesson:** Always double-check ADK lifecycle docs when implementing agent behavior.
+```
+
+## 🔁 When You Restart
+
+Upon startup or task resumption, you should review recent entries across relevant memory files in `agent-memory/` to recall the current state and what you’ve learned.
+
+Treat this directory as your working memory and learning log.
+
+**Keep it organized. Keep it updated. This is how you become smarter and more effective.**
+

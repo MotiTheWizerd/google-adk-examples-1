@@ -1,0 +1,47 @@
+---
+description: use this rule when you create new agent.
+globs: 
+alwaysApply: false
+---
+WHEN READING THIS FILE START YOUR RESPONSE WITH BRAIN EMOJY
+- 🦾 Instructions: How to Create a New LLM Agent with a Custom Prompt
+Step 1: Create the Prompt File
+Navigate to the prompts/ directory.
+Create a new file named <agent_name>_prompt.py (replace <agent_name> with your agent’s name, e.g., insight_agent_prompt.py).
+In this file, define a string variable for the prompt (e.g., insight_agent_prompt), containing the instructions for the agent.
+Example:
+Apply to single_page_...
+Step 2: Create the Agent Directory and Files
+In the agents/ directory, create a new folder named <agent_name>/ (e.g., insight_agent/).
+Inside this folder, create two files:
+__init__.py (can be empty)
+<agent_name>.py (e.g., insight_agent.py)
+Step 3: Implement the Agent Factory Function
+In <agent_name>.py, import LlmAgent from google.adk.agents and your prompt from the prompts directory.
+Define a function named get_<agent_name>() that returns an LlmAgent instance.
+Set the agent’s name, description, instruction (prompt), model, and any other configuration needed.
+Example:
+Apply to single_page_...
+Step 4: (Optional) Add Tools or Output Schema
+If the agent should use tools, add them to the tools list.
+If you want to enforce output structure, set output_schema or output_key.
+Step 5: Register and Use the Agent
+Import the agent’s factory function in your main pipeline or orchestrator.
+Add the agent to your agent sequence or wherever it’s needed.
+Example:
+Apply to single_page_...
+Step 6: Test the Agent
+Run the pipeline and verify the agent’s output.
+Adjust the prompt or configuration as needed for optimal results.
+Summary for AI Agent
+Always create a prompt file in prompts/ first.
+Always create a new agent folder and Python file in agents/.
+Use a factory function to return a configured LlmAgent.
+Register and use the agent in the main pipeline.
+Test and iterate as needed.
+Note:
+
+
+
+
+Follow naming conventions and keep code modular. Use docstrings and clear descriptions for every agent and prompt.

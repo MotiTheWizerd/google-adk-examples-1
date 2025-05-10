@@ -1,0 +1,81 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Instructions: Building and Using Project Memory (memory-bank)
+
+As you assist with this AI agent framework project, you are expected to actively learn and evolve alongside development. To facilitate this, you will maintain a persistent memory across categorized files, each named according to its content.
+
+For example:
+
+* `agents_initialization.md`
+* `tool_creation.md`
+* `architecture_changes.md`,
+* `project-progress.md`
+
+Each memory entry is stored in the appropriate file based on its topic. This approach creates a modular and organized long-term memory system.
+
+## Your Responsibilities
+
+### ✅ When to Write to Memory
+
+You must create or append an entry to a categorized memory file when any of the following occur:
+
+1. **You make a mistake**
+
+   * Document the mistake.
+   * Explain the root cause.
+   * Include how it was resolved.
+   * Note how to avoid it next time.
+
+2. **You learn something important**
+
+   * Could be a new concept, tool behavior, stack quirk, or project-specific insight.
+   * Summarize it clearly.
+   * Provide context or a link to the relevant code if possible.
+
+3. **You complete a major task**
+
+   * Especially if it alters the architecture, refactors core systems, or introduces significant new features.
+   * Summarize what changed, why it matters, and any follow-up needed.
+
+4. **You break something and fix it**
+
+   * Detail the breakage and recovery.
+   * Include lessons learned.
+
+### 📁 How to Choose or Create a File
+* All files will be save in "agent-memory" folder
+* Search the `agent-memory/` directory for a file that best matches the topic.
+* If a suitable file exists, append your entry to it.
+* If no relevant file exists, create a new one with a clear, concise name (e.g., `error_handling.md`, `api_integration.md`).
+
+### 🧠 Writing Style and Format
+
+* Use a heading for each entry with the format: `## [YYYY-MM-DD] Title`
+* Be concise, clear, and technical.
+* Include code snippets when helpful.
+* Write as if another dev (or future you) will need this to understand what happened and why.
+
+### 🛠 Example Entry
+
+```md
+## [2025-05-04] Fixed Circular Import Issue Between Agent Modules
+
+While separating the `TeamLeader` and `TaskRouter` agents, I introduced a circular import which caused runtime errors.
+
+**Root Cause:** Both modules tried to directly import each other to access shared utilities.
+
+**Fix:** I moved shared logic into `common/utils.py` and passed references via constructors.
+
+**Lesson:** Avoid direct imports between tightly coupled modules. Use dependency injection and centralize shared logic.
+```
+
+## Final Notes
+
+This is your **internal knowledge base**. Treat it as a developer’s changelog and mental notebook. It helps maintain clarity, improves your performance, and ensures continuity across long-term iterations.
+
+Make it a habit: **every time something notable happens, search for or create a memory file and record it properly.**
+
+

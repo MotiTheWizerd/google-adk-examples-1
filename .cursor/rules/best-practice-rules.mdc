@@ -1,0 +1,94 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Always add Lighting emojy to the start of the response
+
+# AI Coding Assistant Prompt
+
+## Project Overview
+
+We are building an **AI agent framework** to provide AI-driven automation solutions for businesses. The purpose of this framework is to allow teams to build modular, intelligent agents that can automate complex workflows and decision-making processes across various domains.
+
+## Tech Stack
+
+* **Python 3.11.2** — Modern language features (e.g., pattern matching, `typing`, enhanced dataclass usage)
+* **Google Agent Developer Kit (ADK)** — Core agent infrastructure and communication handling
+* **Pydantic v2** — For schema validation, data modeling, and ensuring clean I/O contracts
+
+## Code Quality and Style Expectations
+
+### 1. Type Hints and Strict Typing
+
+* Use `mypy`-compatible type hints consistently.
+* Favor `Annotated` and Pydantic-typed inputs/outputs.
+
+```python
+def run_action(task: TaskInput) -> TaskResult:
+    ...
+```
+
+### 2. Pydantic v2 Best Practices
+
+* Use `BaseModel` for data contracts.
+* Validate with field constraints and `@model_validator` decorators.
+* Avoid runtime parsing unless absolutely necessary.
+
+```python
+class UserInput(BaseModel):
+    query: str
+    urgency: Literal['low', 'medium', 'high']
+```
+
+### 3. Modularity
+
+* Each agent resides in its own file or module.
+* Keep logic separated into tools, agents, and shared utils.
+* Avoid tight coupling or hardcoded logic; prefer interfaces or patterns.
+
+### 4. Efficient Use of ADK
+
+* Register agent capabilities properly.
+* Follow ADK lifecycle and communication conventions.
+* Handle errors and state via ADK mechanisms.
+
+### 5. Clean, Pythonic Code
+
+* Use meaningful variable/function names.
+* Write small, reusable pure functions.
+* Structure error handling with custom exceptions when needed.
+
+### 6. Testing and Validation
+
+* Use `pytest` for unit testing critical logic.
+* Test Pydantic models for schema coverage.
+* Minimize mocks; design for real testability.
+
+### 7. Docstrings and Documentation
+
+* **Every class, method, and function must have a clear and informative docstring.**
+* Follow standard Python docstring conventions (e.g., Google or NumPy style).
+* These docstrings are not only for human readability, but **also crucial for AI agents** that analyze, refactor, or generate new code based on context.
+* Well-documented code ensures more intelligent and reliable use of AI in code generation and automation.
+
+## Architectural Guidelines
+
+* A central `TeamLeader` agent manages the project and delegates to sub-agents.
+* Sub-agents do **not** directly query the project; everything flows through the leader.
+* The system must support plug-and-play extensibility for agents, tools, and APIs.
+
+## Expectations for AI Coding Assistant
+
+When writing or editing code:
+
+* Ensure it aligns with the stack and best practices above.
+* Be modular, type-safe, and validation-aware.
+* Document code with concise comments and examples when relevant.
+* Use docstrings everywhere to support AI-driven understanding.
+* Suggest architectural or stylistic improvements proactively.
+
+---
+
+> This document serves as a base prompt and development guideline for any AI assistant or collaborator involved in the project.
+
