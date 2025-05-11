@@ -2,7 +2,7 @@ from google.adk.sessions import DatabaseSessionService
 
 def load_user_session(app_name: str, user_id: str, session_id: str, intial_state: dict = ""):
     # ********** DATABASE SETUP **********
-    db_url = "sqlite:///db_parallel_agent.db"
+    db_url = "sqlite:///db_loop_agent.db"
     session_service = DatabaseSessionService(db_url)
     # ********** END OF DATABASE SETUP **********
 

@@ -41,7 +41,7 @@ async def process_agent_response(event):
 
     if event.content and event.content.parts:
         for i, part in enumerate(event.content.parts):
-            print(f"  Part {i}:")
+          
             if hasattr(part, "text") and part.text:
                 print(f"    Text: '{part.text}'")
                 # We will rely on event.is_final_response() from the main loop
@@ -63,7 +63,7 @@ async def process_agent_response(event):
             # Add any other ADK specific part attributes you need to log
 
     if extracted_text:
-        print(f"{Back.YELLOW}{Fore.BLACK}Text from a final event part: {extracted_text}{Style.RESET_ALL}")
+       print('got text from event')  # print(f"{Back.YELLOW}{Fore.BLACK}Text from a final event part: {extracted_text}{Style.RESET_ALL}")
     return extracted_text
 
 
@@ -94,7 +94,7 @@ async def call_agent_async(runner, user_id, session_id, message):
         if event.is_final_response():
             if text_from_this_event:
                 overall_final_response_text = text_from_this_event
-                print(f"{Back.CYAN}{Fore.BLACK}Captured Overall Final Response: {overall_final_response_text}{Style.RESET_ALL}")
+                # print(f"{Back.CYAN}{Fore.BLACK}Captured Overall Final Response: {overall_final_response_text}{Style.RESET_ALL}")
             elif event.content and event.content.parts and hasattr(event.content.parts[0], "text") and event.content.parts[0].text:
                 # Fallback if log_and_extract didn't pick it up but it's plainly there
                 overall_final_response_text = event.content.parts[0].text.strip()
@@ -114,4 +114,4 @@ async def call_agent_async(runner, user_id, session_id, message):
         # This case means the runner finished, but we didn't identify a clear final text response.
         # This could happen if the last agent doesn't produce simple text or if there was an issue.
         print(Back.RED + "Agent execution finished, but no clear overall final text response was captured." + Style.RESET_ALL)
-        return "Agent finished, but no final textual response was extracted."
+        return "Agent finished, but no final textual response was extracgit remote add origin https://github.com/MotiTheWizerd/google-adk-examples-1.gitted."
